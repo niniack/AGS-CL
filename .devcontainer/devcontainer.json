@@ -1,0 +1,36 @@
+{
+	"name": "Existing Dockerfile",
+	"build": {
+		"context": "..",
+		"dockerfile": "Dockerfile"
+	},
+	"runArgs": [
+		"--gpus",
+		"all",
+		"--ipc=host",
+		"--ulimit",
+		"memlock=-1",
+		"--ulimit",
+		"stack=67108864"
+	],	
+	"mounts": [
+		"source=/mnt,target=/mnt,type=bind",
+		"source=${localEnv:HOME}/datasets/,target=/root/datasets,type=bind",
+		"source=${localEnv:HOME}/git/continualTrain/,target=/workspaces/continualTrain,type=bind,readonly"
+	],
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.defaultInterpreterPath": "/workspaces/venv/bin/python",
+				"extensions.verifySignature": false
+			},
+			"extensions": [
+				"ms-python.python",
+				"ms-toolsai.jupyter",
+				"charliermarsh.ruff",
+				"njpwerner.autodocstring",
+				"tamasfe.even-better-toml"
+			]
+		}
+	}
+}

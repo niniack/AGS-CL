@@ -22,7 +22,7 @@ def get_args():
     
     
     parser.add_argument('--output', default='', type=str, required=False, help='(default=%(default)s)')
-    parser.add_argument('--nepochs', default=100, type=int, required=False, help='(default=%(default)d)')
+    parser.add_argument('--nepochs', default=50, type=int, required=False, help='(default=%(default)d)')
     parser.add_argument('--batch-size', default=256, type=int, required=False, help='(default=%(default)d)')
     parser.add_argument('--lr', default=0.001, type=float, required=False, help='(default=%(default)f)')
     parser.add_argument('--rho', default=0.3, type=float, help='(default=%(default)f)')
